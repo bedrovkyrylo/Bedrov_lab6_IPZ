@@ -1,0 +1,59 @@
+@startuml
+class Factory.WinCheckbox {
++ void paint()
++ void click()
+}
+
+class Factory.WinFactory {
++ Button createButton()
++ Checkbox createCheckbox()
+}
+
+interface Factory.Checkbox {
+~ void paint()
+~ void click()
+}
+
+abstract class Factory.GUIFactory {
++ {abstract}Button createButton()
++ {abstract}Checkbox createCheckbox()
+}
+
+class Factory.Main {
++ {static} void main(String[])
+}
+
+class Factory.GtkFactory {
++ Button createButton()
++ Checkbox createCheckbox()
+}
+
+class Factory.GtkCheckbox {
++ void paint()
++ void click()
+}
+
+class Factory.WinButton {
++ void paint()
++ void click()
+}
+
+interface Factory.Button {
+~ void paint()
+~ void click()
+}
+
+class Factory.GtkButton {
++ void paint()
++ void click()
+}
+
+
+
+Factory.Checkbox <|.. Factory.WinCheckbox
+Factory.GUIFactory <|-- Factory.WinFactory
+Factory.GUIFactory <|-- Factory.GtkFactory
+Factory.Checkbox <|.. Factory.GtkCheckbox
+Factory.Button <|.. Factory.WinButton
+Factory.Button <|.. Factory.GtkButton
+@enduml

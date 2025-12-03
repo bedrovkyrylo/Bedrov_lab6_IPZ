@@ -1,0 +1,38 @@
+@startuml
+class Prototype.PrimitiveGraphic {
+- String name
++ GraphicElement clone(int)
++ String getName()
++ void setName(String)
++ void print(String)
+}
+
+
+class Prototype.GraphicGroup {
+- String name
+- List<GraphicElement> children
++ void add(GraphicElement)
++ GraphicElement getChild(int)
++ GraphicElement clone(int)
++ String getName()
++ void setName(String)
++ void print(String)
+}
+
+
+interface Prototype.GraphicElement {
+~ GraphicElement clone(int)
+~ String getName()
+~ void setName(String)
+~ void print(String)
+}
+
+class Prototype.Main {
++ {static} void main(String[])
+}
+
+
+
+Prototype.GraphicElement <|.. Prototype.PrimitiveGraphic
+Prototype.GraphicElement <|.. Prototype.GraphicGroup
+@enduml
