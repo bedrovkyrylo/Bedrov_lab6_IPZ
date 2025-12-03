@@ -1,16 +1,16 @@
 package Factory;
 /**
- * Конкретна фабрика для WinAPI, яка створює компоненти для WinAPI.
+ * Конкретна фабрика для WinAPI, яка створює компоненти для WinAPI
  */
-class WinFactory extends GUIFactory {
+public class F_WinFactory extends F_GUIFactory {
     /**
      * Створює кнопку для WinAPI.
      *
      * @return новий об'єкт кнопки для WinAPI
      */
-    public Button createButton() {
+    public F_Button createButton() {
         System.out.println("Створення кнопки для WinAPI");
-        return new WinButton();
+        return new F_WinButton();
     }
 
     /**
@@ -20,6 +20,6 @@ class WinFactory extends GUIFactory {
      */
     public Checkbox createCheckbox() {
         System.out.println("Створення чекбоксу для WinAPI");
-        return new WinCheckbox();
+        return new F_WinCheckbox();
     }
 }

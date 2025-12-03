@@ -1,8 +1,8 @@
 package Factory;
 /**
- * Конкретна кнопка для WinAPI.
+ * Конкретна кнопка для WinAPI
  */
-class WinButton implements Button {
+public class F_WinButton implements F_Button {
     /**
      * Малює кнопку для WinAPI.
      */

@@ -1,8 +1,8 @@
 package Factory;
 /**
- * Конкретна кнопка для GTK.
+ * Конкретна кнопка для GTK
  */
-class GtkButton implements Button {
+public class F_GtkButton implements F_Button {
     /**
      * Обробляє натискання кнопки для GTK.
      */

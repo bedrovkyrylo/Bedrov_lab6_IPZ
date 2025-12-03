@@ -2,22 +2,22 @@ package Prototype;
 /**
  * Головний клас для демонстрації клонування графічних елементів.
  */
-class Main {
+public class MainP {
     /**
      * Головний метод для демонстрації клонування графічних елементів.
      */
         public static void main(String[] args) {
 
-            GraphicGroup scene = new GraphicGroup("Scene");
+            P_GraphicGroup scene = new P_GraphicGroup("Scene");
 
-            GraphicGroup layer1 = new GraphicGroup("Layer1");
-            GraphicGroup layer2 = new GraphicGroup("Layer2");
+            P_GraphicGroup layer1 = new P_GraphicGroup("Layer1");
+            P_GraphicGroup layer2 = new P_GraphicGroup("Layer2");
 
-            GraphicGroup groupA = new GraphicGroup("GroupA");
+            P_GraphicGroup groupA = new P_GraphicGroup("GroupA");
 
-            PrimitiveGraphic circle = new PrimitiveGraphic("Circle");
-            PrimitiveGraphic rect   = new PrimitiveGraphic("Rectangle");
-            PrimitiveGraphic line   = new PrimitiveGraphic("Line");
+            P_PrimitiveGraphic circle = new P_PrimitiveGraphic("Circle");
+            P_PrimitiveGraphic rect   = new P_PrimitiveGraphic("Rectangle");
+            P_PrimitiveGraphic line   = new P_PrimitiveGraphic("Line");
 
             groupA.add(circle);
             groupA.add(rect);
@@ -31,13 +31,13 @@ class Main {
             System.out.println("\n=== ORIGINAL SCENE ===");
             scene.print("");
 
-            GraphicGroup sceneDepth0 = (GraphicGroup) scene.clone(0);
+            P_GraphicGroup sceneDepth0 = (P_GraphicGroup) scene.clone(0);
             System.out.println("\n=== CLONE depth=0 ===");
             sceneDepth0.print("");
 
-            GraphicGroup layer1FromCopy0 = (GraphicGroup) sceneDepth0.getChild(0);
-            GraphicGroup groupAFromCopy0 = (GraphicGroup) layer1FromCopy0.getChild(0);
-            PrimitiveGraphic circleFromCopy0 = (PrimitiveGraphic) groupAFromCopy0.getChild(0);
+            P_GraphicGroup layer1FromCopy0 = (P_GraphicGroup) sceneDepth0.getChild(0);
+            P_GraphicGroup groupAFromCopy0 = (P_GraphicGroup) layer1FromCopy0.getChild(0);
+            P_PrimitiveGraphic circleFromCopy0 = (P_PrimitiveGraphic) groupAFromCopy0.getChild(0);
             circleFromCopy0.setName("Circle_modified_via_depth0");
 
             System.out.println("\n=== AFTER MODIFY depth=0 ===");
@@ -46,13 +46,13 @@ class Main {
             System.out.println("COPY:");
             sceneDepth0.print("");
 
-            GraphicGroup sceneDepth1 = (GraphicGroup) scene.clone(1);
+            P_GraphicGroup sceneDepth1 = (P_GraphicGroup) scene.clone(1);
             System.out.println("\n=== CLONE depth=1 ===");
             sceneDepth1.print("");
 
-            GraphicGroup layer1FromCopy1 = (GraphicGroup) sceneDepth1.getChild(0);
-            GraphicGroup groupAFromCopy1 = (GraphicGroup) layer1FromCopy1.getChild(0);
-            PrimitiveGraphic rectFromCopy1 = (PrimitiveGraphic) groupAFromCopy1.getChild(1);
+            P_GraphicGroup layer1FromCopy1 = (P_GraphicGroup) sceneDepth1.getChild(0);
+            P_GraphicGroup groupAFromCopy1 = (P_GraphicGroup) layer1FromCopy1.getChild(0);
+            P_PrimitiveGraphic rectFromCopy1 = (P_PrimitiveGraphic) groupAFromCopy1.getChild(1);
             rectFromCopy1.setName("Rectangle_modified_via_depth1");
 
             System.out.println("\n=== AFTER MODIFY depth=1 ===");
@@ -61,12 +61,12 @@ class Main {
             System.out.println("COPY:");
             sceneDepth1.print("");
 
-            GraphicGroup sceneDepth2 = (GraphicGroup) scene.clone(2);
+            P_GraphicGroup sceneDepth2 = (P_GraphicGroup) scene.clone(2);
             System.out.println("\n=== CLONE depth=2 ===");
             sceneDepth2.print("");
 
-            GraphicGroup layer2FromCopy2 = (GraphicGroup) sceneDepth2.getChild(1);
-            PrimitiveGraphic lineFromCopy2 = (PrimitiveGraphic) layer2FromCopy2.getChild(0);
+            P_GraphicGroup layer2FromCopy2 = (P_GraphicGroup) sceneDepth2.getChild(1);
+            P_PrimitiveGraphic lineFromCopy2 = (P_PrimitiveGraphic) layer2FromCopy2.getChild(0);
             lineFromCopy2.setName("Line_modified_via_depth2");
 
             System.out.println("\n=== AFTER MODIFY depth=2 ===");

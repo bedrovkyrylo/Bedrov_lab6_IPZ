@@ -1,8 +1,8 @@
 package Factory;
 /**
- * Інтерфейс для чекбоксу.
+ * Інтерфейс для чекбоксу
  */
-interface Checkbox {
+public interface Checkbox {
     /**
      * Малює чекбокс.
      */

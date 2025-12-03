@@ -1,14 +1,14 @@
 package Factory;
 /**
- * Абстрактна фабрика для створення GUI компонентів (кнопок та чекбоксів).
+ * Абстрактна фабрика для створення GUI компонентів (кнопок та чекбоксів)
  */
-abstract class GUIFactory {
+public abstract class F_GUIFactory {
     /**
      * Створює кнопку.
      *
      * @return новий об'єкт кнопки
      */
-    public abstract Button createButton();
+    public abstract F_Button createButton();
     /**
      * Створює чекбокс.
      *

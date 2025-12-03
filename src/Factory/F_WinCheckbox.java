@@ -1,8 +1,8 @@
 package Factory;
 /**
- * Конкретний чекбокс для WinAPI.
+ * Конкретний чекбокс для WinAPI
  */
-class WinCheckbox implements Checkbox {
+public class F_WinCheckbox implements Checkbox {
     /**
      * Малює чекбокс для WinAPI.
      */

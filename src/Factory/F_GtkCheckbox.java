@@ -1,8 +1,8 @@
 package Factory;
 /**
- * Конкретний чекбокс для GTK.
+ * Конкретний чекбокс для GTK
  */
-class GtkCheckbox implements Checkbox {
+public class F_GtkCheckbox implements Checkbox {
     /**
      * Малює чекбокс для GTK.
      */

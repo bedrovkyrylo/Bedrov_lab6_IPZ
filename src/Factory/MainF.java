@@ -2,11 +2,11 @@ package Factory;
 /**
  * Головний клас для демонстрації використання фабрики та її конкретних реалізацій.
  */
-public class Main {
+public class MainF {
     public static void main(String[] args) {
-        GUIFactory factory = new WinFactory();
+        F_GUIFactory factory = new F_WinFactory();
 
-        Button button = factory.createButton();
+        F_Button button = factory.createButton();
         Checkbox checkbox = factory.createCheckbox();
 
         button.paint();

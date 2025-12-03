@@ -1,8 +1,8 @@
 package Factory;
 /**
- * Інтерфейс для кнопки.
+ * Інтерфейс для кнопки
  */
-interface Button {
+public interface F_Button {
     /**
      * Малює кнопку.
      */

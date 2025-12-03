@@ -1,15 +1,15 @@
 package Prototype;
 /**
- * Інтерфейс для графічних елементів, які можуть бути клоновані та мати ім'я.
+ * Інтерфейс для графічних елементів, які можуть бути клоновані та мати ім'я
  */
-interface GraphicElement {
+public interface P_GraphicElement {
     /**
      * Створює клон графічного елементу.
      *
      * @param depth глибина клонування
      * @return новий об'єкт GraphicElement, який є клоном поточного
      */
-    GraphicElement clone(int depth);
+    P_GraphicElement clone(int depth);
     /**
      * Отримує ім'я графічного елементу.
      *

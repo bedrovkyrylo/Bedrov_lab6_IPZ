@@ -1,8 +1,8 @@
 package Prototype;
 /**
- * Клас для примітивного графічного елементу, що реалізує інтерфейс GraphicElement.
+ * Клас для примітивного графічного елементу, що реалізує інтерфейс GraphicElement
  */
-class PrimitiveGraphic implements GraphicElement {
+public class P_PrimitiveGraphic implements P_GraphicElement {
     private String name;
 
     /**
@@ -10,7 +10,7 @@ class PrimitiveGraphic implements GraphicElement {
      *
      * @param name ім'я примітиву
      */
-    public PrimitiveGraphic(String name) {
+    public P_PrimitiveGraphic(String name) {
         this.name = name;
     }
 
@@ -21,9 +21,9 @@ class PrimitiveGraphic implements GraphicElement {
      * @return новий примітив
      */
     @Override
-    public GraphicElement clone(int depth) {
+    public P_GraphicElement clone(int depth) {
         System.out.println("Cloning primitive: " + name + " (depth=" + depth + ")");
-        return new PrimitiveGraphic(this.name + "_clone");
+        return new P_PrimitiveGraphic(this.name + "_clone");
     }
 
     /**

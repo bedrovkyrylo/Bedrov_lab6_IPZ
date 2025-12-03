@@ -3,18 +3,18 @@ package Prototype;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * Клас для групи графічних елементів, що реалізує інтерфейс GraphicElement.
+ * Клас для групи графічних елементів, що реалізує інтерфейс GraphicElement
  */
-class GraphicGroup implements GraphicElement {
+public class P_GraphicGroup implements P_GraphicElement {
     private String name;
-    private List<GraphicElement> children = new ArrayList<>();
+    private List<P_GraphicElement> children = new ArrayList<>();
 
     /**
      * Конструктор для створення групи з ім'ям.
      *
      * @param name ім'я групи
      */
-    public GraphicGroup(String name) {
+    public P_GraphicGroup(String name) {
         this.name = name;
     }
 
@@ -23,7 +23,7 @@ class GraphicGroup implements GraphicElement {
      *
      * @param element графічний елемент для додавання
      */
-    public void add(GraphicElement element) {
+    public void add(P_GraphicElement element) {
         System.out.println("Adding element to group " + name + ": " + element.getName());
         children.add(element);
     }
@@ -34,7 +34,7 @@ class GraphicGroup implements GraphicElement {
      * @param index індекс елементу
      * @return елемент групи
      */
-    public GraphicElement getChild(int index) {
+    public P_GraphicElement getChild(int index) {
         return children.get(index);
     }
 
@@ -45,21 +45,21 @@ class GraphicGroup implements GraphicElement {
      * @return нова копія групи
      */
     @Override
-    public GraphicElement clone(int depth) {
+    public P_GraphicElement clone(int depth) {
         System.out.println("Cloning group: " + name + " (depth=" + depth + ")");
-        GraphicGroup copy = new GraphicGroup(this.name + "_clone");
+        P_GraphicGroup copy = new P_GraphicGroup(this.name + "_clone");
 
         if (depth <= 0) {
             System.out.println("  Performing shallow clone, children NOT cloned.");
             copy.children.addAll(this.children);
         } else if (depth == 1) {
             System.out.println("  Cloning only direct children with depth=0.");
-            for (GraphicElement child : children) {
+            for (P_GraphicElement child : children) {
                 copy.children.add(child.clone(0));
             }
         } else {
             System.out.println("  Recursively cloning children...");
-            for (GraphicElement child : children) {
+            for (P_GraphicElement child : children) {
                 copy.children.add(child.clone(depth - 1));
             }
         }
@@ -96,7 +96,7 @@ class GraphicGroup implements GraphicElement {
     public void print(String indent) {
         System.out.println(indent + "Group: " + name);
         String childIndent = indent + "  ";
-        for (GraphicElement child : children) {
+        for (P_GraphicElement child : children) {
             child.print(childIndent);
         }
     }
